@@ -1,0 +1,26 @@
+body{
+    background: white url("images/background.jpg");
+}
+
+.navbar{
+    border-radius: 0;
+}
+
+.navbar-brand{
+    font-family: 'Satisfy', cursive;
+}
+
+a:link, a:visited{
+    color: black;
+    font-size: 20px;
+}
+
+a:hover,a:active{
+    color: rgb(94, 95, 177);
+    
+}
+
+p{
+    padding-top: 1cm;
+    text-indent: 40px;
+}

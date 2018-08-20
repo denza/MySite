@@ -1,0 +1,12 @@
+{% extends "postovi/base.html" %}
+
+{% block body%}
+
+<div class="thumbnail col-md-6 col-md-offset-3">
+    <h1>{{question.quest_name}}</h1>
+    Published: {{question.pub_date|date:'d M Y'}} at {{question.pub_date|date:'H:i'}}
+    <p>{{question.quest_text}}</p>
+</div>
+
+
+{% endblock %}

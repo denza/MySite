@@ -1,0 +1,16 @@
+{% extends "postovi/base.html" %}
+
+{% block body%}
+
+{% for question in object_list %}
+    <div class="row">
+        <div class = "col-md-5 col-md-offset-3">
+            <div class = "thumbnail">
+                   <a  href="{% url 'postovi:detail' question.id %}" ><h1>{{question.quest_name}}</h1></a>
+                <h3>{{question.pub_date|date:'d M Y'}} at {{question.pub_date|date:'H:i'}}</h3>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+
+{% endblock %}
