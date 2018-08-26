@@ -2,9 +2,10 @@ from django.db import models
 from django.urls import reverse
 from datetime import datetime
 from django.conf import settings
-from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
 
 class Question(models.Model):
+    user = models.ForeignKey(get_user_model(), on_delete = "CASCADE")
     quest_name = models.CharField(max_length = 100)
     quest_text = models.CharField(max_length = 50000)
     pub_date = models.DateTimeField(auto_now_add=True)

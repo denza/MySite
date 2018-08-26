@@ -15,8 +15,14 @@
                             {% csrf_token %}
                             {% include "postovi/basic_form.html" %}
                                 <div class="form-horizontal col-md-offset-5">
-                                   <br>
-                                    <button type="submit" class="btn btn-success"> Objavi </button>
+
+                                    {% if user.is_authenticated %}
+                                    <br>
+                                    <button type="submit" class="btn btn-success"> Post </button>
+                                    
+                                    {% endif %}
+                                   
+                                    
                                 </div>
                             </form>
                         </div>

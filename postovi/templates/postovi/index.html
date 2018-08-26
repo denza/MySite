@@ -12,7 +12,10 @@
                 <div class="col-md-offset-10">
                     <form action="{% url 'postovi:delete' question.id %}" style="display: inline" method="POST">
                             {% csrf_token %}
+                            {% if question.user.id == user.id %}
                             <button type="submit" class="glyphicon glyphicon-trash btn btn-danger">Delete</button>
+                            {% endif %}
+                            
                     </form>            
                 </div>
                 
