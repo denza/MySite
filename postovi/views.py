@@ -19,4 +19,12 @@ class DetailView(generic.DetailView):
 class QuestionCreate(CreateView):
     model = Question
     fields = ['quest_name','quest_text']
+
+class QuestionUpdate(UpdateView):
+    model = Question
+    fields = ['quest_name','quest_text']
+
+class QuestionDelete(DeleteView):
+    model = Question
+    success_url = reverse_lazy('postovi:index')
     

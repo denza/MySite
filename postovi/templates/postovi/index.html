@@ -1,4 +1,4 @@
-{% extends "postovi/base.html" %}
+{% extends "base.html" %}
 
 {% block body%}
 
@@ -8,6 +8,14 @@
             <div class = "thumbnail">
                    <a  href="{% url 'postovi:detail' question.id %}" ><h1>{{question.quest_name}}</h1></a>
                 <h3>{{question.pub_date|date:'d M Y'}} at {{question.pub_date|date:'H:i'}}</h3>
+
+                <div class="col-md-offset-10">
+                    <form action="{% url 'postovi:delete' question.id %}" style="display: inline" method="POST">
+                            {% csrf_token %}
+                            <button type="submit" class="glyphicon glyphicon-trash btn btn-danger">Delete</button>
+                    </form>            
+                </div>
+                
             </div>
         </div>
     </div>

@@ -2,8 +2,7 @@
     {% load staticfiles %}
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{% static 'postovi/style.css' %}" />
-    
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
 
     <!-- Meni -->
 <nav class="navbar navbar-inverse">
@@ -24,11 +23,32 @@
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
+                    {% if user.is_authenticated %}
                     <li class="">
                         <a href="{% url 'postovi:create' %}">
-                            Post&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            Post
                         </a>
                     </li>
+                    <li>
+                        <a href="#">
+                                {{user.username}}
+                        </a>
+                    </li>
+                            
+                    <li>
+                        <a href="{% url 'logout' %}">Logout&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                    </li>
+                    {% else %}
+                    <li>
+                        <a href="{% url 'logout' %}">Login</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'register' %}">
+                            Register&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        </a> 
+                    </li>
+                    {% endif %}
+                                 
                 </ul>
         </div>
 
